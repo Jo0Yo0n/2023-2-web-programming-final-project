@@ -1,0 +1,91 @@
+body {
+	font-family: "Nanum Gothic", sans-serif;
+}
+#wrap {
+	background: #f9f9f9;
+	height: 1000px;
+}
+
+/* 컨테이너 */
+.container {
+	width: 990px;
+	margin: 0 auto;
+}
+
+/* 헤더 */
+.header-container .logo {
+	width: 200px;
+	height: 200px;
+}
+.header-container .menu {
+	text-align: right;
+	position: relative;
+	top: -150px;
+}
+.header-container .menu a {
+	color: #fff;
+	padding: 10px 0px 10px 13px;
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 12px;
+	border-radius: 20px;
+}
+.header-container .menu a:link,
+.header-container .menu a:visited {
+	background-color: pink;
+	padding: 5px 15px;
+}
+.header-container .menu a:hover,
+.header-container .menu a:active {
+	background-color: deeppink;
+}
+
+/* 검색창 */
+/* 검색창 */
+.search-container {
+	position: relative;
+	bottom: 50px;
+	width: 600px;
+	margin: 0 auto;
+}
+.search-container .search {
+	width: 100%;
+	border: 1px solid #bbb;
+	border-radius: 8px;
+	padding: 18px 12px;
+	font-size: 14px;
+}
+.search-container .submit {
+	position: absolute;
+	width: 40px;
+	top: 15px;
+	right: 12px;
+	margin: 0;
+}
+
+/* 컨텐츠 */
+.contents-container {
+	width: 800px;
+	margin: 0 auto;
+}
+.contents-container .hospital-info {
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+.contents-container .hospital-info .hospital-pic {
+	margin-right: 90px;
+	float: left;
+}
+.contents-container .hospital-info .hospital-pic img {
+	height: 200px;
+	width: 250px;
+}
+.contents-container .hospital-info .hospital-desc {
+	float: left;
+	position: relative;
+	top: 50px;
+}
+.contents-container .hospital-info .hospital-desc .name {
+	margin-bottom: 30px;
+	font-weight: bold;
+}

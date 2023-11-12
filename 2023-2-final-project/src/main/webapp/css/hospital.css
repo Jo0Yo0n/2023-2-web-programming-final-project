@@ -1,0 +1,99 @@
+body {
+	font-family: "Nanum Gothic", sans-serif;
+}
+#wrap {
+	background: #f9f9f9;
+	height: 1000px;
+}
+
+/* 컨테이너 */
+.container {
+	width: 990px;
+	margin: 0 auto;
+}
+
+/* 헤더 */
+.header-container .logo {
+	width: 200px;
+	height: 200px;
+}
+.header-container .menu {
+	text-align: right;
+	position: relative;
+	top: -150px;
+}
+.header-container .menu a {
+	color: #fff;
+	padding: 10px 0px 10px 13px;
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 12px;
+	border-radius: 20px;
+}
+.header-container .menu a:link,
+.header-container .menu a:visited {
+	background-color: pink;
+	padding: 5px 15px;
+}
+.header-container .menu a:hover,
+.header-container .menu a:active {
+	background-color: deeppink;
+}
+
+/* 병원 설명 */
+.desc-container {
+	overflow: hidden;
+	width: 650px;
+	margin: 0 auto;
+}
+.desc-container .hospital-info {
+	float: left;
+	margin-right: 130px;
+}
+.desc-container .hospital-info img {
+	height: 200px;
+	width: 250px;
+}
+.desc-container .hospital-info div {
+	text-align: center;
+}
+
+.desc-container .name-price {
+	font-size: 16px;
+	float: left;
+	position: relative;
+	top: 50px;
+}
+.desc-container .name-price > div {
+	text-align: center;
+	margin: 20px;
+	background-color: #eeeff1;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+/* 병원 리뷰 */
+.review-container {
+	position: relative;
+	top: 80px;
+	margin-top: 100px;
+	width: 500px;
+	margin: 0 auto;
+	background-color: #eeeff1;
+	border-radius: 20px;
+	padding: 20px;
+	width: 70%;
+}
+.review-container .title {
+	text-align: center;
+	margin-bottom: 40px;
+	padding-top: 20px;
+	font-size: 25px;
+}
+.review-container .review-content > div {
+	margin: 30px;
+	padding-bottom: 10px;
+}
+.review-container .review-content .user-name {
+	padding-right: 50px;
+}
