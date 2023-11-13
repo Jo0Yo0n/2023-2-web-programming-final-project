@@ -31,7 +31,9 @@
 				<div class="container">
 					<div class="signup-container">
 						<form action="#" method="post" name="signUpForm" onsubmit="return sendit()">
-							<input id="email" class="text-field" type="text" name="userEmail" placeholder="Email" />
+							<input class="text-field" type="text" name="userNickName" placeholder="Nick Name"> 
+							
+							<input class="text-field" type="text" name="userEmail" placeholder="Email" />
 
 							<input class="text-field" type="password" name="userPassword" placeholder="Password" />
 
@@ -42,7 +44,7 @@
 								placeholder="Password Again"
 							/>
 
-							<input class="submit-btn" type="submit" value="Sign Up" onclick="signUpCheck()" />
+							<input class="submit-btn" type="submit" value="Sign Up" />
 						</form>
 					</div>
 				</div>

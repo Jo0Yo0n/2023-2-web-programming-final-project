@@ -1,7 +1,15 @@
 const sendit = () => {
+	const userNickName = document.signUpForm.userNickName;
 	const userEmail = document.signUpForm.userEmail;
 	const userPassword = document.signUpForm.userPassword;
 	const userPasswordCheck = document.signUpForm.userPasswordCheck;
+	
+	// 닉네임 입력 안했을 경우
+	if(userNickName.value === ""){
+		alert("닉네임을 입력해주세요.");
+		userNickName.focus();
+		return false;
+	}
 
 	// 이메일 입력 안했을 경우
 	if (userEmail.value === "") {
