@@ -6,8 +6,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>My Page</title>
-		<link rel="stylesheet" href="../css/reset.css" />
-		<link rel="stylesheet" href="../css/mypage.css" />
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/reset.css" />
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/mypage.css" />
 		<!-- 폰트 -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,14 +18,14 @@
 			<div id="header">
 				<div class="container">
 					<div class="header-container">
-						<a href="./main.jsp">
-							<img class="logo" src="../img/logo.png" alt="logo" />
+						<a href="<%= request.getContextPath() %>/main.jsp">
+							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
 
 						<div class="menu">
-							<a href="./login.jsp">로그인</a>
-							<a href="./signup.jsp">회원가입</a>
-							<a href="./mypage.jsp">마이페이지</a>
+							<a href="<%= request.getContextPath() %>/login.jsp">로그인</a>
+							<a href="<%= request.getContextPath() %>/signup.jsp">회원가입</a>
+							<a href="<%= request.getContextPath() %>/mypage.jsp">마이페이지</a>
 						</div>
 					</div>
 				</div>

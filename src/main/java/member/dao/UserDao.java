@@ -47,6 +47,26 @@ public class UserDao extends DaoTemplate<User> {
         }, userId);
     }
     
+    public Optional<User> getUserByLoginId(String loginId) throws SQLException {
+    	String sql = "SELECT * FROM user WHERE email = ?";
+        return queryForObject(sql, rs -> {
+            try {
+				if (rs.next()) {
+				    return Optional.of(new User(
+				        rs.getLong("userId"),
+				        rs.getString("nickName"),
+				        rs.getString("email"),
+				        rs.getString("password")
+				    ));
+				}else {
+					return Optional.empty(); // 해당하는 row가 없으면 Optional.empty() 반환
+				}
+			} catch (SQLException e) {
+				return Optional.empty(); // 에러가 발생했을 때 Optional.empty() 반환
+			}
+        }, loginId);
+    }
+    
     public List<User> getAllUsers() throws SQLException {
         // DaoTemplate에서 구현된 queryForList 메서드를 사용하여 모든 사용자를 가져오는 쿼리를 실행할 수 있다.
         return queryForList("SELECT * FROM user", rs -> {

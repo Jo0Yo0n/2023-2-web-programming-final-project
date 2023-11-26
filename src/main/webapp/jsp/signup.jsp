@@ -6,22 +6,22 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sign In</title>
-		<link rel="stylesheet" href="../css/reset.css" />
-		<link rel="stylesheet" href="../css/signup.css" />
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/reset.css" />
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/signup.css" />
 	</head>
 	<body>
 		<div id="wrap">
 			<div id="header">
 				<div class="container">
 					<div class="header-container">
-						<a href="./main.jsp">
-							<img class="logo" src="../img/logo.png" alt="logo" />
+						<a href="<%= request.getContextPath() %>/main.jsp">
+							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
 
 						<div class="menu">
-							<a href="./login.jsp">로그인</a>
-							<a href="./signup.jsp">회원가입</a>
-							<a href="./mypage.jsp">마이페이지</a>
+							<a href="<%= request.getContextPath() %>/login.jsp">로그인</a>
+							<a href="<%= request.getContextPath() %>/signup.jsp">회원가입</a>
+							<a href="<%= request.getContextPath() %>/mypage.jsp">마이페이지</a>
 						</div>
 					</div>
 				</div>
@@ -50,6 +50,6 @@
 				</div>
 			</div>
 		</div>
-		<script src="../js/signup.js"></script>
+		<script src="<%= request.getContextPath() %>/js/signup.js"></script>
 	</body>
 </html>

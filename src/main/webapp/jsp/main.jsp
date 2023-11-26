@@ -6,8 +6,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Main Page</title>
-		<link rel="stylesheet" href="../css/reset.css" />
-		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/reset.css" />
+		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css" />
 		<!-- 폰트 -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,14 +18,14 @@
 			<div id="header">
 				<div class="container">
 					<div class="header-container">
-						<a href="./main.jsp">
-							<img class="logo" src="../img/logo.png" alt="logo" />
+						<a href="<%= request.getContextPath() %>/jsp/main.jsp">
+							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
 
 						<div class="menu">
-							<a href="./login.jsp">로그인</a>
-							<a href="./signup.jsp">회원가입</a>
-							<a href="./mypage.jsp">마이페이지</a>
+							<a href="<%= request.getContextPath() %>/jsp/login.jsp">로그인</a>
+							<a href="<%= request.getContextPath() %>/jsp/signup.jsp">회원가입</a>
+							<a href="<%= request.getContextPath() %>/jsp/mypage.jsp">마이페이지</a>
 						</div>
 					</div>
 				</div>
@@ -58,42 +58,42 @@
 					<div class="contents-container">
 						<div class="cont cont1">
 							<a href="#">
-								<img src="../img/maltese.jpg" alt="maltese" />
+								<img src="<%= request.getContextPath() %>/img/maltese.jpg" alt="maltese" />
 								<div class="desc">사랑 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont2">
 							<a href="#">
-								<img src="../img/poodle.jpg" alt="poodle" />
+								<img src="<%= request.getContextPath() %>/img/poodle.jpg" alt="poodle" />
 								<div class="desc">희망 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont3">
 							<a href="#">
-								<img src="../img/shiba.jpg" alt="shiba" />
+								<img src="<%= request.getContextPath() %>/img/shiba.jpg" alt="shiba" />
 								<div class="desc">평화 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont4">
 							<a href="#">
-								<img src="../img/maltese.jpg" alt="maltese" />
+								<img src="<%= request.getContextPath() %>/img/maltese.jpg" alt="maltese" />
 								<div class="desc">자유 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont5">
 							<a href="#">
-								<img src="../img/poodle.jpg" alt="poodle" />
+								<img src="<%= request.getContextPath() %>/img/poodle.jpg" alt="poodle" />
 								<div class="desc">평등 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont6">
 							<a href="#">
-								<img src="../img/shiba.jpg" alt="shiba" />
+								<img src="<%= request.getContextPath() %>/img/shiba.jpg" alt="shiba" />
 								<div class="desc">박애 동물병원</div>
 							</a>
 						</div>

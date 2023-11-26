@@ -69,8 +69,16 @@ public class User implements Identifiable {
 		this.nickName = userDto.getNickName();
 		this.email = userDto.getEmail();
 	}
+	public User(SignUpDto signUpDto) {
+		this.nickName = signUpDto.getNickName();
+		this.email = signUpDto.getLoginId();
+		this.password = signUpDto.getPassword();
+	}
 	public User() {
-		
+		this.userId = null;
+		this.email = null;
+		this.password = null;
+		this.nickName = null;
 	}
 
 	@Override
