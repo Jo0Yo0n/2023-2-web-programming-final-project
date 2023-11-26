@@ -1,0 +1,68 @@
+#wrap {
+	background: #f9f9f9;
+	height: 1000px;
+}
+
+/* 컨테이너 */
+.container {
+	width: 990px;
+	margin: 0 auto;
+}
+
+/* 헤더 */
+.header-container .logo {
+	width: 200px;
+	height: 200px;
+}
+.header-container .menu {
+	text-align: right;
+	position: relative;
+	top: -150px;
+}
+.header-container .menu a {
+	color: #fff;
+	padding: 10px 0px 10px 13px;
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 12px;
+	border-radius: 20px;
+}
+.header-container .menu a:link,
+.header-container .menu a:visited {
+	background-color: pink;
+	padding: 5px 15px;
+}
+.header-container .menu a:hover,
+.header-container .menu a:active {
+	background-color: deeppink;
+}
+
+/* 회원가입 */
+#contents {
+	padding-top: 30px;
+}
+.signup-container {
+	width: 300px;
+	margin: 0 auto;
+	padding: 100px;
+	border-radius: 20px;
+	background-color: #eeeff1;
+}
+.signup-container .text-field {
+	font-size: 14px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	width: 92%;
+}
+.signup-container .submit-btn {
+	font-size: 14px;
+	margin-bottom: 30px;
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+}
+.signup-container .submit-btn:hover,
+.signup-container .submit-btn:active {
+	background-color: pink;
+}

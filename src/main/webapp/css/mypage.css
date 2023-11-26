@@ -1,0 +1,74 @@
+body {
+	font-family: "Nanum Gothic", sans-serif;
+}
+#wrap {
+	background: #f9f9f9;
+	height: 1000px;
+}
+
+/* 컨테이너 */
+.container {
+	width: 990px;
+	margin: 0 auto;
+}
+
+/* 헤더 */
+.header-container .logo {
+	width: 200px;
+	height: 200px;
+}
+.header-container .menu {
+	text-align: right;
+	position: relative;
+	top: -150px;
+}
+.header-container .menu a {
+	color: #fff;
+	padding: 10px 0px 10px 13px;
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 12px;
+	border-radius: 20px;
+}
+.header-container .menu a:link,
+.header-container .menu a:visited {
+	background-color: pink;
+	padding: 5px 15px;
+}
+.header-container .menu a:hover,
+.header-container .menu a:active {
+	background-color: deeppink;
+}
+
+/* 컨텐츠 */
+#contents {
+	padding: 30px;
+}
+.contents-container {
+	width: 400px;
+	margin: 0 auto;
+	border-radius: 20px;
+	background-color: #eeeff1;
+	padding-bottom: 20px;
+	padding: 50px;
+}
+.contents-container .user-name {
+	text-align: center;
+	padding-top: 20px;
+}
+.contents-container .list {
+	margin-top: 60px;
+}
+.contents-container .list a {
+	text-align: center;
+}
+.contents-container .list a div {
+	background-color: #c0e8f1;
+	padding: 12px;
+	margin: 5px;
+	margin-top: 40px;
+	border-radius: 20px;
+}
+.contents-container .list a div:hover {
+	background-color: #d4eaff;
+}
