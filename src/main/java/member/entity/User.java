@@ -1,4 +1,7 @@
-package test;
+package member.entity;
+
+import jdbcUtil.Identifiable;
+import member.dto.*;
 
 public class User implements Identifiable {
 	private Long userId;
@@ -75,7 +78,5 @@ public class User implements Identifiable {
 		return "User [userId=" + userId + ", nickName=" + nickName + ", email=" + email + ", password=" + password
 				+ "]";
 	}
-
-	
 	
 }

@@ -1,11 +1,11 @@
-package test;
+package member.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-import jdbcTemplate.DaoTemplate;
-
+import jdbcUtil.DaoTemplate;
+import member.entity.User;
 /**
  * DaoTemplate을 상속받고 사용할 객체를 제네릭을 이용해 입력
  */

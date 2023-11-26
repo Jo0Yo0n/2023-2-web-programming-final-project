@@ -1,10 +1,10 @@
-package test;
+package member.dto;
 
-public class User implements Identifiable {
+public class UserDto {
 	private Long userId;
 	private String nickName;
 	private String email;
-	private String password;
+
 	
 	public String getNickName() {
 		return nickName;
@@ -12,10 +12,6 @@ public class User implements Identifiable {
 
 	public String getEmail() {
 		return email;
-	}
-
-	public String getPassword() {
-		return password;
 	}
 
 	public Long getUserId() {
@@ -26,11 +22,9 @@ public class User implements Identifiable {
 		this.nickName = nickName;
 	}
 
-	@Override
     public void setId(Long id) {
         this.userId = id;
     }
-	@Override
 	public Long getId() {
 		return userId;
 	}
@@ -40,11 +34,9 @@ public class User implements Identifiable {
 	 * @param email
 	 * @param password
 	 */
-	public User(String nickName, String email, String password) {
-		super();
+	public UserDto(String nickName, String email) {
 		this.nickName = nickName;
 		this.email = email;
-		this.password = password;
 	}
 	/**
 	 * 일반적인 경우 사용 x
@@ -54,28 +46,20 @@ public class User implements Identifiable {
 	 * @param email
 	 * @param password
 	 */
-	public User(Long userId, String nickName, String email, String password) {
+	public UserDto(Long userId, String nickName, String email ) {
 		super();
 		this.userId = userId;
 		this.nickName = nickName;
 		this.email = email;
-		this.password = password;
+
 	}
-	public User(UserDto userDto) {
-		this.userId = userDto.getId();
-		this.nickName = userDto.getNickName();
-		this.email = userDto.getEmail();
-	}
-	public User() {
+	public UserDto() {
 		
 	}
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", nickName=" + nickName + ", email=" + email + ", password=" + password
+		return "User [userId=" + userId + ", nickName=" + nickName + ", email=" + email
 				+ "]";
 	}
-
-	
-	
 }

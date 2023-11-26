@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.function.Function;
 
 
-import test.Identifiable;
-
 public class DaoTemplate<Obj> {
     private Connection connection;
     /**

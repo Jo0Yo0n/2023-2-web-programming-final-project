@@ -1,4 +1,4 @@
-package test;
+package jdbcUtil;
 
 public interface Identifiable {
     Long getId();
