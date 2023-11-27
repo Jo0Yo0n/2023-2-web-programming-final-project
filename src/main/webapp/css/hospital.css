@@ -72,6 +72,20 @@ body {
 	border-radius: 20px;
 }
 
+/* 좋아요 버튼 */
+.middle {
+	text-align: center;
+}
+.middle .like {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	bottom: -20px;
+}
+.like.active {
+	fill: red;
+}
+
 /* 병원 리뷰 */
 .review-container {
 	position: relative;
