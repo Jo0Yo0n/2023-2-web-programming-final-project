@@ -18,14 +18,14 @@
 			<div id="header">
 				<div class="container">
 					<div class="header-container">
-						<a href="<%= request.getContextPath() %>/jsp/main.jsp">
+						<a href="<%= request.getContextPath() %>/jsp/main">
 							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
 
 						<div class="menu">
-							<a href="<%= request.getContextPath() %>/jsp/login.jsp">로그인</a>
-							<a href="<%= request.getContextPath() %>/jsp/signup.jsp">회원가입</a>
-							<a href="<%= request.getContextPath() %>/jsp/mypage.jsp">마이페이지</a>
+							<a href="<%= request.getContextPath() %>/jsp/login">로그인</a>
+							<a href="<%= request.getContextPath() %>/jsp/signup">회원가입</a>
+							<a href="<%= request.getContextPath() %>/jsp/mypage">마이페이지</a>
 						</div>
 					</div>
 				</div>

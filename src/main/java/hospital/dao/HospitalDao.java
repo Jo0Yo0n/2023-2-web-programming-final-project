@@ -37,7 +37,7 @@ public class HospitalDao extends DaoTemplate<Hospital> {
 	
 	public List<Hospital> getAllHospital() throws SQLException {
         // DaoTemplate에서 구현된 queryForList 메서드를 사용하여 모든 사용자를 가져오는 쿼리를 실행할 수 있다.
-        return queryForList("SELECT * FROM user", rs -> {
+        return queryForList("SELECT * FROM hospital", rs -> {
             return new Hospital(
 			        rs.getLong("hospitalId"),
 			        rs.getString("tel"),

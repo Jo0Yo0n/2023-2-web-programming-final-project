@@ -30,5 +30,13 @@ public class Hospital {
 		this.hospitalName = hospitalName;
 		this.hosPic = hosPic;
 	}
+	public Hospital() {
+		
+	}
+	@Override
+	public String toString() {
+		return "Hospital [hospitalId=" + hospitalId + ", tel=" + tel + ", address=" + address + ", hospitalName="
+				+ hospitalName + ", hosPic=" + hosPic + "]";
+	}
 	
 }

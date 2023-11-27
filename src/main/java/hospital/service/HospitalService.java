@@ -16,4 +16,13 @@ public class HospitalService {
 		}
 		return null;
 	}
+	public Hospital getHospitalById(Long hospitalId){
+		try {
+			return hospitalDao.getHospitalById(hospitalId).orElse(new Hospital());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 }
