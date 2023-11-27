@@ -9,7 +9,7 @@ import jdbcUtil.DaoTemplate;
 import member.entity.User;
 
 public class HospitalDao extends DaoTemplate<Hospital> {
-	public Long insertUser(Hospital hos) throws SQLException {
+	public Long insertHospital(Hospital hos) throws SQLException {
         String sql = "INSERT INTO hospital (hospitalId, tel, address, hosName, hosPic) VALUES (?, ?, ?, ?, ?)";
         return insert(sql, hos, hos.getHospitalId(), hos.getTel(), hos.getAddress(), hos.getHospitalName(), hos.getHosPic());
     }

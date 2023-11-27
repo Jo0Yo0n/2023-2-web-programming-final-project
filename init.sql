@@ -40,6 +40,14 @@ ALTER TABLE `likeTbl`
 ADD CONSTRAINT `FK_User_TO_like_1` FOREIGN KEY (`userId`) REFERENCES `User` (`userId`),
 ADD CONSTRAINT `FK_Hospital_TO_like_1` FOREIGN KEY (`hospitalId`) REFERENCES `Hospital` (`hospitalId`);
 
+ALTER TABLE user AUTO_INCREMENT = 1;
+
+INSERT INTO user (nickName, email, password) 
+VALUES ('jy', 'jade0000@naver.com', 'admin1234');
+
+INSERT INTO user (nickName, email, password) 
+VALUES ('jy', 'jade1087@naver.com', 'admin1234');
+
 INSERT INTO hospital (tel, address, hosName, hosPic) 
 VALUES ('02-953-0075', '서울 성북구 동소문로 73 시티플레이스 B1, 1F, 2F', 'VIP동물의료센터', 'maltese.jpg');
 
@@ -57,3 +65,12 @@ VALUES ('02-529-5575', '서울 강남구 도곡로 189 1층', '예은동물병�
 
 INSERT INTO hospital (tel, address, hosName, hosPic) 
 VALUES ('02-574-7533', '서울 강남구 선릉로 806 킹콩빌딩 5층', '이안동물의학센터', 'shiba.jpg');
+
+INSERT INTO review (userId, hospitalId, content) 
+VALUES (1, 1, 'review test1');
+
+INSERT INTO review (userId, hospitalId, content) 
+VALUES (1, 1, 'review test2');
+
+INSERT INTO review (userId, hospitalId, content) 
+VALUES (1, 1, 'review test3');

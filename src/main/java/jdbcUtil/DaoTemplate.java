@@ -122,6 +122,23 @@ public class DaoTemplate<Obj> {
         }
         return resultList;
     }
+    public <T> List<T> joinQueryForList(String sql, RowMapper<T> rowMapper, Object... args) throws SQLException {
+    	List<T> resultList = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            // 인자 바인딩
+            for (int i = 0; i < args.length; i++) {
+                ps.setObject(i + 1, args[i]);
+            }
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                resultList.add(rowMapper.mapRow(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultList;
+    }
     /**
      * 업데이트를 실행하고 user id를 반환함.
      * @param sql
