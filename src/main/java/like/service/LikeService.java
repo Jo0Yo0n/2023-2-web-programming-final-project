@@ -15,4 +15,5 @@ public class LikeService {
 	public List<Like> getLikesByUserId(Long userId){
 		return likeDao.getLikesByUserId(userId);
 	}
+
 }

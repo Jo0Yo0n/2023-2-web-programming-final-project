@@ -1,18 +1,18 @@
 CREATE TABLE `User` (
-   `userId`   bigint PRIMARY KEY  NOT NULL,
+   `userId`   bigint PRIMARY KEY AUTO_INCREMENT  NOT NULL,
    `nickName`   VARCHAR(15)   NOT NULL,
    `email`   VARCHAR(40)   NOT NULL,
    `password`   VARCHAR(40)   NOT NULL
 );
 CREATE TABLE `Hospital` (
-   `hospitalId`   bigint PRIMARY KEY  NOT NULL,
+   `hospitalId`   bigint PRIMARY KEY AUTO_INCREMENT  NOT NULL,
    `tel`   VARCHAR(20)   NOT NULL,
    `address`   VARCHAR(200)   NOT NULL,
    `hosName`   VARCHAR(20)   NOT NULL,
    `hosPic`   VARCHAR(20)   NOT NULL
 );
 CREATE TABLE `Review` (
-   `reviewId`   bigint PRIMARY KEY  NOT NULL,
+   `reviewId`   bigint PRIMARY KEY AUTO_INCREMENT  NOT NULL,
    `userId`   bigint   NOT NULL,
    `hospitalId`   bigint   NOT NULL,
    `content`   VARCHAR(200)   NOT NULL
@@ -22,7 +22,7 @@ ADD CONSTRAINT `FK_User_TO_Review_1` FOREIGN KEY (`userId`) REFERENCES `User` (`
 ADD CONSTRAINT `FK_Hospital_TO_Review_1` FOREIGN KEY (`hospitalId`) REFERENCES `Hospital` (`hospitalId`);
 
 CREATE TABLE `Department` (
-   `departmentId`   bigint PRIMARY KEY  NOT NULL,
+   `departmentId`   bigint PRIMARY KEY AUTO_INCREMENT  NOT NULL,
    `hospitalId`   bigint   NOT NULL,
    `departName`   VARCHAR(40)   NOT NULL,
    `price`   bigint   NOT NULL
@@ -74,3 +74,33 @@ VALUES (1, 1, 'review test2');
 
 INSERT INTO review (userId, hospitalId, content) 
 VALUES (1, 1, 'review test3');
+
+INSERT INTO likeTbl (userId, hospitalId) 
+VALUES (1, 1);
+
+INSERT INTO likeTbl (userId, hospitalId) 
+VALUES (2, 1);
+
+INSERT INTO likeTbl (userId, hospitalId) 
+VALUES (1, 2);
+
+INSERT INTO likeTbl (userId, hospitalId) 
+VALUES (2, 2);
+
+INSERT INTO likeTbl (userId, hospitalId) 
+VALUES (1, 3);
+
+INSERT INTO likeTbl (userId, hospitalId) 
+VALUES (1, 4);
+
+INSERT INTO Department (departmentId, hospitalId, departName, price) 
+VALUES (1, 1, '슬개골 탈구', 600000);
+
+INSERT INTO Department (departmentId, hospitalId, departName, price) 
+VALUES (2, 2, '슬개골 탈구', 580000);
+
+INSERT INTO Department (departmentId, hospitalId, departName, price) 
+VALUES (3, 1, '중성화', 300000);
+
+INSERT INTO Department (departmentId, hospitalId, departName, price) 
+VALUES (4, 2, '중성화', 320000);
