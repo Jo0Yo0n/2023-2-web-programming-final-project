@@ -45,7 +45,8 @@ public class HospitalController extends HttpServlet {
 		
 		// review
 		List<ReviewDto> reviewDtos = reviewService.getReviewByHospitalId(hospitalId);
-		
+		request.setAttribute("hospital", hospital);
+
 		System.out.println(reviewDtos.get(0));
 		
 		//List<Hospital> hospitals = hospitalService.getMainHospital();

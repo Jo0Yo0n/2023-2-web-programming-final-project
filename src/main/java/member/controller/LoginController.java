@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,6 +50,7 @@ public class LoginController extends HttpServlet {
 			HttpSession session = request.getSession();
 			// 로그인에 성공했다면 세션에 유저 아이디를 저장.
 			session.setAttribute("userId", user.getId());
+			response.addCookie(new Cookie("JSESSIONID", session.getId()));
 			response.sendRedirect(request.getContextPath()+"/main?login=true");
 		} else {
 			response.sendRedirect(request.getContextPath()+"/login?login=false");
