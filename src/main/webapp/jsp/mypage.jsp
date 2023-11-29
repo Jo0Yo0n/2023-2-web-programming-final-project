@@ -23,8 +23,7 @@
 						</a>
 
 						<div class="menu">
-							<a href="<%= request.getContextPath() %>/login">로그인</a>
-							<a href="<%= request.getContextPath() %>/signup">회원가입</a>
+							<a href="<%= request.getContextPath() %>/logout">로그아웃</a>
 							<a href="<%= request.getContextPath() %>/mypage">마이페이지</a>
 						</div>
 					</div>

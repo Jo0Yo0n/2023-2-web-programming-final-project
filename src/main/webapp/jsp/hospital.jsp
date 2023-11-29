@@ -22,11 +22,19 @@
 							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
 
+						<%-- 세션에 userId가 있으면 로그인 상태라고 가정 --%>
+						<% if(session.getAttribute("userId") != null) { %>
 						<div class="menu">
-							<a href="<%= request.getContextPath() %>/login">로그인</a>
-							<a href="<%= request.getContextPath() %>/signup">회원가입</a>
-							<a href="<%= request.getContextPath() %>/mypage">마이페이지</a>
+							<a href="<%= request.getContextPath() %>/jsp/logout">로그아웃</a>
+							<a href="<%= request.getContextPath() %>/jsp/mypage">마이페이지</a>
 						</div>
+						<% } else { %>
+						
+						<div class="menu">
+							<a href="<%= request.getContextPath() %>/jsp/login">로그인</a>
+							<a href="<%= request.getContextPath() %>/jsp/signup">회원가입</a>
+						</div>
+						<% } %>
 					</div>
 				</div>
 			</div>
