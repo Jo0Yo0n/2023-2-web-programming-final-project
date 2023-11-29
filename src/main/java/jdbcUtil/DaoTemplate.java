@@ -11,7 +11,7 @@ import java.util.function.Function;
 
 
 public class DaoTemplate<Obj> {
-    private Connection connection;
+    protected Connection connection;
     /**
      * ConnectionManager에 mysql 기본 설정으로 connection 생성 
      */
@@ -47,7 +47,8 @@ public class DaoTemplate<Obj> {
      */
     public Long insert(String sql, Obj object, Object... args) throws SQLException {
         Long rowsAffected = 0L;
-        try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        try (
+        	PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             // 인자 바인딩
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i + 1, args[i]);

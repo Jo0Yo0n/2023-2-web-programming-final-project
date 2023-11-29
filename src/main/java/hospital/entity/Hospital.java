@@ -1,6 +1,8 @@
 package hospital.entity;
 
-public class Hospital {
+import jdbcUtil.Identifiable;
+
+public class Hospital implements Identifiable {
 	private Long hospitalId;
 	private String tel;
 	private String address;
@@ -37,6 +39,14 @@ public class Hospital {
 	public String toString() {
 		return "Hospital [hospitalId=" + hospitalId + ", tel=" + tel + ", address=" + address + ", hospitalName="
 				+ hospitalName + ", hosPic=" + hosPic + "]";
+	}
+	@Override
+	public Long getId() {
+		return hospitalId;
+	}
+	@Override
+	public void setId(Long id) {
+		this.hospitalId = id;
 	}
 	
 }

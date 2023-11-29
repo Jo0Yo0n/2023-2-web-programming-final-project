@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import hospital.entity.Hospital;
 import hospital.service.HospitalService;
+import like.entity.Like;
+import like.service.LikeService;
 import review.dto.ReviewDto;
 import review.service.ReviewService;
 
@@ -23,6 +25,7 @@ public class HospitalController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final HospitalService hospitalService = new HospitalService();
 	private final ReviewService reviewService = new ReviewService();
+	private final LikeService likeService = new LikeService();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -45,9 +48,13 @@ public class HospitalController extends HttpServlet {
 		
 		// review
 		List<ReviewDto> reviewDtos = reviewService.getReviewByHospitalId(hospitalId);
-		request.setAttribute("hospital", hospital);
+		request.setAttribute("reviews", reviewDtos);
+		
+		// likes
+		List<Like> likes = likeService.getLikesByHospitalId(hospitalId);
+		
+		request.setAttribute("likes", likes);
 
-		System.out.println(reviewDtos.get(0));
 		
 		//List<Hospital> hospitals = hospitalService.getMainHospital();
 	    dispatcher.forward(request, response);

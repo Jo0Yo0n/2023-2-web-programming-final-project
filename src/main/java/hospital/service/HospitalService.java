@@ -5,6 +5,7 @@ import java.util.List;
 
 import hospital.dao.HospitalDao;
 import hospital.entity.Hospital;
+import like.dao.LikeDao;
 
 public class HospitalService {
 	private final HospitalDao hospitalDao = new HospitalDao();

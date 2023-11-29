@@ -4,12 +4,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import hospital.entity.Hospital;
 import jdbcUtil.DaoTemplate;
-import review.Review;
+import review.entity.Review;
 import review.dto.ReviewDto;
 
 public class ReviewDao extends DaoTemplate<Review>{
+
 	public Long insertReview(Review review) throws SQLException {
         String sql = "INSERT INTO review (reviewId, userId, hospitalId, content) VALUES (?, ?, ?, ?)";
         return insert(sql, review, review.getUserId(), review.getHospitalId(), review.getContent());

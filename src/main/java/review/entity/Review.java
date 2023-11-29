@@ -1,4 +1,4 @@
-package review;
+package review.entity;
 
 public class Review {
 	private Long reviewId;
