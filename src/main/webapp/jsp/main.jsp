@@ -65,42 +65,42 @@
 				<div class="container">
 					<div class="contents-container">
 						<div class="cont cont1">
-							<a href="#">
+							<a href="<%= request.getContextPath() %>/hospital?hospitalId=1">
 								<img src="<%= request.getContextPath() %>/img/maltese.jpg" alt="maltese" />
 								<div class="desc">사랑 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont2">
-							<a href="#">
+							<a href="<%= request.getContextPath() %>/hospital?hospitalId=2">
 								<img src="<%= request.getContextPath() %>/img/poodle.jpg" alt="poodle" />
 								<div class="desc">희망 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont3">
-							<a href="#">
+							<a href="<%= request.getContextPath() %>/hospital?hospitalId=3">
 								<img src="<%= request.getContextPath() %>/img/shiba.jpg" alt="shiba" />
 								<div class="desc">평화 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont4">
-							<a href="#">
+							<a href="<%= request.getContextPath() %>/hospital?hospitalId=4">
 								<img src="<%= request.getContextPath() %>/img/maltese.jpg" alt="maltese" />
 								<div class="desc">자유 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont5">
-							<a href="#">
+							<a href="<%= request.getContextPath() %>/hospital?hospitalId=5">
 								<img src="<%= request.getContextPath() %>/img/poodle.jpg" alt="poodle" />
 								<div class="desc">평등 동물병원</div>
 							</a>
 						</div>
 
 						<div class="cont cont6">
-							<a href="#">
+							<a href="<%= request.getContextPath() %>/hospital?hospitalId=6">
 								<img src="<%= request.getContextPath() %>/img/shiba.jpg" alt="shiba" />
 								<div class="desc">박애 동물병원</div>
 							</a>

@@ -38,15 +38,17 @@
 					</div>
 				</div>
 			</div>
-
+			<%@ page import="hospital.entity.Hospital" %>
+			<% int id = Integer.parseInt(request.getParameter("hospitalId")); %>
+			<% Hospital hospital = (Hospital) request.getAttribute("hospital"); %>
 			<div id="desc">
 				<div class="container">
 					<div class="desc-container">
 						<div class="hospital-info">
-							<img src="<%= request.getContextPath() %>/img/maltese.jpg" />
-							<div>사랑 동물 병원</div>
-							<div>02 111 1111</div>
-							<div>위치: 서울특별시 영등포구</div>
+							<img src="<%= request.getContextPath() %>/img/<%= hospital.getHosPic() %>" />
+							<div><%= hospital.getHospitalName() %></div>
+							<div><%= hospital.getTel() %></div>
+							<div><%= hospital.getAddress() %></div>
 						</div>
 
 						<div class="name-price">
