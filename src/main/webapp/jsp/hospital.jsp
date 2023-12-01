@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="hospital.entity.Hospital" %>
+<%@ page import="review.dto.ReviewDto" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
@@ -41,6 +43,7 @@
 			</div>
 			<% 
 			Hospital hospital = (Hospital) request.getAttribute("hospital"); 
+			List<ReviewDto> reviews = (List<ReviewDto>) request.getAttribute("reviews");
 			 %>
 			<div id="desc">
 				<div class="container">
@@ -80,15 +83,24 @@
 							<div class="title">리뷰</div>
 
 							<div class="review-content">
-								<div>
-									<span class="user-name">a 님</span>
-									<span class="user-review">친절하고 가격이 착합니다.</span>
-								</div>
-
-								<div>
-									<span class="user-name">b 님</span>
-									<span class="user-review">집에서 조금 멀었는데 그래도 괜찮았어요.</span>
-								</div>
+								<%
+								if (reviews != null && !reviews.isEmpty()){
+									for(ReviewDto review : reviews){
+								%>
+									<div>
+										<span class="user-name"><%= review.getUserNickName() %>님</span>
+										<span class="user-review"><%= review.getContent() %></span>
+									</div>
+								<%
+									}
+								} else {
+								%>
+									<div>
+										<span>리뷰가 없습니다.</span>
+									</div>
+								<%
+								}
+								%>
 							</div>
 						</div>
 					</div>
