@@ -14,7 +14,7 @@ public class LikeDao extends DaoTemplate<Like> {
 
 	public Like insertLike(Like like) {
 		// like ID 가 없기 때문에 다른 것들과 insert 가 조금 다름.
-        String sql = "INSERT INTO like (userId, hospitalId) VALUES (?, ?)";
+        String sql = "INSERT INTO likeTbl (userId, hospitalId) VALUES (?, ?)";
         try (
         	PreparedStatement ps = connection.prepareStatement(sql)) {
             // 인자 바인딩
@@ -31,7 +31,7 @@ public class LikeDao extends DaoTemplate<Like> {
 	}
 	
 	public List<Like> getLikesByHospitalId(Long hospitalId) {
-		String sql = "SELECT * FROM like WHERE hospitalId = ?";
+		String sql = "SELECT * FROM likeTbl WHERE hospitalId = ?";
 		try {
 			return queryForList(sql, rs -> {
 			    return new Like(
@@ -46,7 +46,7 @@ public class LikeDao extends DaoTemplate<Like> {
 	}
 	
 	public List<Like> getLikesByUserId(Long userId) {
-		String sql = "SELECT * FROM like WHERE userId = ?";
+		String sql = "SELECT * FROM likeTbl WHERE userId = ?";
 		try {
 			return queryForList(sql, rs -> {
 			    return new Like(

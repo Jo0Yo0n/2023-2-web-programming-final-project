@@ -1,5 +1,8 @@
 package hospital.entity;
 
+import java.util.List;
+
+import department.entity.Department;
 import jdbcUtil.Identifiable;
 
 public class Hospital implements Identifiable {
@@ -32,6 +35,7 @@ public class Hospital implements Identifiable {
 		this.hospitalName = hospitalName;
 		this.hosPic = hosPic;
 	}
+
 	public Hospital() {
 		
 	}

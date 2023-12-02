@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import department.entity.Department;
+import department.service.DepartmentService;
 import hospital.entity.Hospital;
 import hospital.service.HospitalService;
 import like.entity.Like;
@@ -26,6 +28,7 @@ public class HospitalController extends HttpServlet {
 	private final HospitalService hospitalService = new HospitalService();
 	private final ReviewService reviewService = new ReviewService();
 	private final LikeService likeService = new LikeService();
+	private final DepartmentService departmentService = new DepartmentService();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -55,6 +58,10 @@ public class HospitalController extends HttpServlet {
 		
 		request.setAttribute("likes", likes);
 
+		// department
+		List<Department> departments = departmentService.getDepartmentByHospitalId(hospitalId);
+		request.setAttribute("departments", departments);
+		
 		
 		//List<Hospital> hospitals = hospitalService.getMainHospital();
 	    dispatcher.forward(request, response);
