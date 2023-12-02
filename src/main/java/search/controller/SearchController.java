@@ -1,6 +1,7 @@
 package search.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import search.dto.SearchDto;
 import search.service.SearchService;
 
 /**
@@ -33,7 +35,8 @@ public class SearchController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String keyword = request.getParameter("keyword");
-		searchService.getResult(keyword);
+		List<SearchDto> searchResult = searchService.getResult(keyword);
+		request.setAttribute("searchResult", searchResult);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/search-result.jsp");
 	    dispatcher.forward(request, response);
 	}

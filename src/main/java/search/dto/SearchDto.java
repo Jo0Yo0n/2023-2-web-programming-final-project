@@ -1,6 +1,5 @@
 package search.dto;
 
-import department.entity.Department;
 import hospital.entity.Hospital;
 
 public class SearchDto {
