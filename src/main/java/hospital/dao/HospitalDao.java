@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import hospital.entity.Hospital;
 import jdbcUtil.DaoTemplate;
-import member.entity.User;
 
 public class HospitalDao extends DaoTemplate<Hospital> {
 	public Long insertHospital(Hospital hos) throws SQLException {

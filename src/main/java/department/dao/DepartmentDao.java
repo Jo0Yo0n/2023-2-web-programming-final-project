@@ -6,7 +6,6 @@ import java.util.List;
 
 import department.entity.Department;
 import jdbcUtil.DaoTemplate;
-import like.entity.Like;
 
 public class DepartmentDao extends DaoTemplate<Department> {
 

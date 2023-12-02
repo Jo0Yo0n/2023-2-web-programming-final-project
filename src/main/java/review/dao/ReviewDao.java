@@ -6,6 +6,7 @@ import java.util.List;
 
 import jdbcUtil.DaoTemplate;
 import review.entity.Review;
+import review.dto.MyReviewDto;
 import review.dto.ReviewDto;
 
 public class ReviewDao extends DaoTemplate<Review>{
@@ -30,5 +31,23 @@ public class ReviewDao extends DaoTemplate<Review>{
 			return new ArrayList<ReviewDto>();
 		}
 	}
-	
+	public List<MyReviewDto> getMyReviewsByUserId(Long userId){
+		String sql = "SELECT hospital.hospitalId, hospital.tel, hospital.address, hospital.hosName, hospital.hosPic, review.content, review.reviewId FROM review JOIN hospital ON review.userId = ?";
+		try {
+			return joinQueryForList(sql, rs -> {
+			    return new MyReviewDto(
+				        rs.getLong("hospitalId"),
+				        rs.getLong("reviewId"),
+				        rs.getString("hosName"),
+				        rs.getString("tel"),
+				        rs.getString("address"),
+				        rs.getString("hosPic"),
+				        rs.getString("content")
+				    );
+			}, userId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<MyReviewDto>();
+		}
+	}
 }

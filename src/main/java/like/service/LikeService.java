@@ -15,5 +15,14 @@ public class LikeService {
 	public List<Like> getLikesByUserId(Long userId){
 		return likeDao.getLikesByUserId(userId);
 	}
+	
+	public void updateLike(Long userId, Long hospitalId){
+		List<Like> likes = likeDao.getLikesByUserIdAndHospitalId(userId, hospitalId);
+		if(likes.size() == 0) {
+			likeDao.insertLike(new Like(userId, hospitalId));
+		} else {
+			likeDao.deleteLike(userId, hospitalId);
+		}
+	}
 
 }

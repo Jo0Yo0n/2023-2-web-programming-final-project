@@ -1,8 +1,5 @@
 package hospital.entity;
 
-import java.util.List;
-
-import department.entity.Department;
 import jdbcUtil.Identifiable;
 
 public class Hospital implements Identifiable {

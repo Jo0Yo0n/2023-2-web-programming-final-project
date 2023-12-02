@@ -2,13 +2,11 @@ package like.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import jdbcUtil.DaoTemplate;
 import like.entity.Like;
-import review.dto.ReviewDto;
 
 public class LikeDao extends DaoTemplate<Like> {
 
@@ -18,9 +16,9 @@ public class LikeDao extends DaoTemplate<Like> {
         try (
         	PreparedStatement ps = connection.prepareStatement(sql)) {
             // 인자 바인딩
-            
-            ps.setObject(0, like.getUserId());
-            ps.setObject(1, like.getHospitalId());
+           
+            ps.setObject(1, like.getUserId());
+            ps.setObject(2, like.getHospitalId());
             
             ps.executeUpdate();
 
@@ -59,4 +57,29 @@ public class LikeDao extends DaoTemplate<Like> {
 			return new ArrayList<Like>();
 		}
 	}
+	
+	public List<Like> getLikesByUserIdAndHospitalId(Long userId, Long hospitalId) {
+		String sql = "SELECT * FROM likeTbl WHERE userId = ? AND hospitalId = ?";
+		try {
+			return queryForList(sql, rs -> {
+			    return new Like(
+				        rs.getLong("userId"),
+				        rs.getLong("hospitalId")
+				    );
+			}, userId, hospitalId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<Like>();
+		}
+	}
+	
+	public void deleteLike(Long userId, Long hospitalId) {
+        String sql = "DELETE FROM likeTbl WHERE userId = ? AND hospitalId = ?";
+        try {
+        	delete(sql, userId, hospitalId);
+        } catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
