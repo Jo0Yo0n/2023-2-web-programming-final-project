@@ -49,6 +49,7 @@ body {
 .desc-container .hospital-info {
 	float: left;
 	margin-right: 130px;
+	width: 250px;
 }
 .desc-container .hospital-info img {
 	height: 200px;
@@ -56,6 +57,7 @@ body {
 }
 .desc-container .hospital-info div {
 	text-align: center;
+	margin-top: 10px;
 }
 
 .desc-container .name-price {

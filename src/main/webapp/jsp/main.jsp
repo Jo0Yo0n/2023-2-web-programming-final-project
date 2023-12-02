@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="hospital.entity.Hospital" %>
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
@@ -21,7 +24,7 @@
 						<a href="<%= request.getContextPath() %>/main">
 							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
-						
+						 
 						<%-- 세션에 userId가 있으면 로그인 상태라고 가정 --%>
 						<% if(session.getAttribute("userId") != null) { %>
 						<div class="menu">
@@ -61,50 +64,29 @@
 				</div>
 			</div>
 
+			
 			<div id="contents">
 				<div class="container">
 					<div class="contents-container">
-						<div class="cont cont1">
-							<a href="#">
-								<img src="<%= request.getContextPath() %>/img/maltese.jpg" alt="maltese" />
-								<div class="desc">사랑 동물병원</div>
-							</a>
-						</div>
-
-						<div class="cont cont2">
-							<a href="#">
-								<img src="<%= request.getContextPath() %>/img/poodle.jpg" alt="poodle" />
-								<div class="desc">희망 동물병원</div>
-							</a>
-						</div>
-
-						<div class="cont cont3">
-							<a href="#">
-								<img src="<%= request.getContextPath() %>/img/shiba.jpg" alt="shiba" />
-								<div class="desc">평화 동물병원</div>
-							</a>
-						</div>
-
-						<div class="cont cont4">
-							<a href="#">
-								<img src="<%= request.getContextPath() %>/img/maltese.jpg" alt="maltese" />
-								<div class="desc">자유 동물병원</div>
-							</a>
-						</div>
-
-						<div class="cont cont5">
-							<a href="#">
-								<img src="<%= request.getContextPath() %>/img/poodle.jpg" alt="poodle" />
-								<div class="desc">평등 동물병원</div>
-							</a>
-						</div>
-
-						<div class="cont cont6">
-							<a href="#">
-								<img src="<%= request.getContextPath() %>/img/shiba.jpg" alt="shiba" />
-								<div class="desc">박애 동물병원</div>
-							</a>
-						</div>
+                    	<%                   
+                        Object attribute = request.getAttribute("hospitals");
+                        if (attribute instanceof List) {
+	                    	List<Hospital> hospitals = (List<Hospital>) attribute;
+    	               		Collections.shuffle(hospitals);	// 매번 다른 순서
+        	                int numberOfHospitalsToShow = 6;	//6개의 병원만 표시
+            	            for (int i = 0; i < Math.min(numberOfHospitalsToShow, hospitals.size()); i++) { 
+                	            Hospital hospital = hospitals.get(i);
+                    	%>
+                    	<div class="cont">
+                        	<a href="<%= request.getContextPath() %>/hospital?hospitalId=<%= hospital.getId() %>">
+                            	<img src="<%= request.getContextPath() %>/img/<%= hospital.getHosPic() %>" alt="<%= hospital.getHospitalName() %>" />
+                            	<div class="desc"><%= hospital.getHospitalName() %></div>
+                        	</a>
+                    	</div> 
+                    	<% 
+                        	}
+                      	}
+                    	%>                 	                   
 					</div>
 				</div>
 			</div>

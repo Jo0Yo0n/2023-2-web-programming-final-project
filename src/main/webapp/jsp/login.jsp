@@ -8,6 +8,7 @@
 		<title>Login</title>
 		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/reset.css" />
 		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/login.css" />
+		<script src="<%= request.getContextPath() %>/js/loginFail.js"></script>
 	</head>
 	<body>
 		<div id="wrap">
