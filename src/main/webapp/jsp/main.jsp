@@ -24,7 +24,7 @@
 						<a href="<%= request.getContextPath() %>/main">
 							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
-						
+						 
 						<%-- 세션에 userId가 있으면 로그인 상태라고 가정 --%>
 						<% if(session.getAttribute("userId") != null) { %>
 						<div class="menu">
