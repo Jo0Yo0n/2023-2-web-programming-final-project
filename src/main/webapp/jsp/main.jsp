@@ -11,6 +11,13 @@
 		<title>Main Page</title>
 		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/reset.css" />
 		<link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css" />
+		<!-- 검색 -->
+		<script>
+			function searchByKeyword(keyword){
+				let form = document.getElementById("search-form");
+				form.action = "<%= request.getContextPath() %>/search?keyword=" + keyword;
+			}
+		</script>
 		<!-- 폰트 -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,9 +52,9 @@
 			<div id="search">
 				<div class="container">
 					<div class="search-container">
-						<form action="#" method="get">
+						<form id="search-form" method="get">
 							<input class="search" type="text" name="search" placeholder="검색어 입력" />
-							<input class="submit" type="submit" value="검색" />
+							<input class="submit" type="submit" value="검색" onclick="searchByKeyword(document.querySelector('.search').value)"/>
 						</form>
 					</div>
 				</div>
@@ -56,10 +63,10 @@
 			<div id="nav">
 				<div class="container">
 					<div class="nav-container">
-						<a href="#" class="link1">건강검진</a>
-						<a href="#" class="link2">예방접종</a>
-						<a href="#" class="link3">중성화 수술</a>
-						<a href="#" class="link4">슬개골 탈구</a>
+						<a href="<%= request.getContextPath() %>/search?keword=건강검진" class="link1">건강검진</a>
+						<a href="<%= request.getContextPath() %>/search?keword=예방접종" class="link2">예방접종</a>
+						<a href="<%= request.getContextPath() %>/search?keword=중성화 수술" class="link3">중성화 수술</a>
+						<a href="<%= request.getContextPath() %>/search?keword=슬개골 탈구" class="link4">슬개골 탈구</a>
 					</div>
 				</div>
 			</div>
