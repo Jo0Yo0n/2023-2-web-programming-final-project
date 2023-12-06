@@ -103,6 +103,17 @@
 								%>
 							</div>
 						</div>
+						
+						<%-- 로그인된 경우에만 리뷰 작성 폼을 표시 --%>
+						<% if(session.getAttribute("userId") != null) { %>
+						<div id="review-form">
+							<form action="<%= request.getContextPath() %>/submitReview" mothod="post">
+								<textarea name="review" rows="4" placeholder="리뷰를 작성해주세요"></textarea>
+								<input type="hidden" name="hospitalId" value="<%= hospital.getHospitalId() %>" />
+								<input type="submit" value="리뷰 작성" />
+							</form>
+						</div>
+						<% } %>
 					</div>
 				</div>
 			</div>
