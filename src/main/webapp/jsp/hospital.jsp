@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="hospital.entity.Hospital" %>
 <%@ page import="review.dto.ReviewDto" %>
+<%@ page import="department.entity.Department" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -44,6 +45,9 @@
 			<% 
 			Hospital hospital = (Hospital) request.getAttribute("hospital"); 
 			List<ReviewDto> reviews = (List<ReviewDto>) request.getAttribute("reviews");
+			
+			//departments 변수 가져오기
+			List<Department> departments = (List<Department>)request.getAttribute("departments");
 			 %>
 			<div id="desc">
 				<div class="container">
@@ -56,15 +60,24 @@
 						</div>
 
 						<div class="name-price">
+						<% if(departments != null && !departments.isEmpty()) { %>
+							<%
+								for (Department department : departments) {
+									String departmentName = department.getdepartmentName();
+									Integer departmentPrice = department.getPrice();
+							%>
 							<div>
-								<span class="name">슬개골 탈구</span>
-								<span class="price">600,000원</span>
+								<span class="name"><%= departmentName %> : </span>
+								<span class="price"><%= departmentPrice %>원</span>
 							</div>
-
-							<div>
-								<span class="name">중성화</span>
-								<span class="price">100,000원</span>
+							<%
+								}
+							%>
+						<% } else { %>
+							<div class="no-departments">
+								<span>진료 과목이 없습니다.</span>
 							</div>
+						<% } %>
 						</div>
 					</div>
 				</div>
