@@ -22,10 +22,19 @@
 							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
 
+						<%-- 세션에 userId가 있으면 로그인 상태라고 가정 --%>
+						<% if(session.getAttribute("userId") != null) { %>
 						<div class="menu">
 							<a href="<%= request.getContextPath() %>/logout">로그아웃</a>
 							<a href="<%= request.getContextPath() %>/mypage">마이페이지</a>
 						</div>
+						<% } else { %>
+						
+						<div class="menu">
+							<a href="<%= request.getContextPath() %>/login">로그인</a>
+							<a href="<%= request.getContextPath() %>/signup">회원가입</a>
+						</div>
+						<% } %>
 					</div>
 				</div>
 
@@ -33,19 +42,19 @@
 					<div class="container">
 						<div class="contents-container">
 							<div class="user-name">
-								<h1>{회원이름}님</h1>
+								<h1><%= session.getAttribute("userNIckName") %>님</h1>
 							</div>
 
 							<div class="list">
-								<a href="#">
+								<a href="<%= request.getContextPath() %>/mypage/myReview?userId=<%=session.getAttribute("userId") %>">
 									<div>작성한 리뷰</div>
 								</a>
 
-								<a href="#">
+								<a href="<%= request.getContextPath() %>/mypage/likes?userId=<%=session.getAttribute("userId") %>">
 									<div>찜한 병원</div>
 								</a>
 
-								<a href="#">
+								<a href="<%= request.getContextPath() %>/logout">
 									<div>로그아웃</div>
 								</a>
 							</div>
