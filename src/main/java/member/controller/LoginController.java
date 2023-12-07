@@ -51,6 +51,7 @@ public class LoginController extends HttpServlet {
 			// 로그인에 성공했다면 세션에 유저 아이디를 저장.
 			session.setAttribute("userId", user.getId());
 			response.addCookie(new Cookie("JSESSIONID", session.getId()));
+			response.addCookie(new Cookie("userNickName", user.getNickName()));
 			response.sendRedirect(request.getContextPath()+"/main?login=true");
 		} else {
 			response.sendRedirect(request.getContextPath()+"/login?login=false");

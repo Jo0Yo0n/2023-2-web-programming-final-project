@@ -1,6 +1,9 @@
 package review.entity;
 
-public class Review {
+import jdbcUtil.Identifiable;
+import review.dto.ReviewDto;
+
+public class Review implements Identifiable {
 	private Long reviewId;
 	private Long userId;
 	private Long hospitalId;
@@ -17,6 +20,9 @@ public class Review {
 	public String getContent() {
 		return content;
 	}
+	public Review() {
+		
+	}
 	public Review(Long reviewId, Long userId, Long hospitalId, String content) {
 		super();
 		this.reviewId = reviewId;
@@ -25,7 +31,17 @@ public class Review {
 		this.content = content;
 	}
 	
-	public Review() {
-		
+	public Review(ReviewDto reviewDto) {
+		this.userId = reviewDto.getUserId();
+		this.hospitalId = reviewDto.getHospitalId();
+		this.content = reviewDto.getContent();
+	}
+	@Override
+	public Long getId() {
+		return reviewId;
+	}
+	@Override
+	public void setId(Long id) {
+		this.reviewId = id;
 	}
 }

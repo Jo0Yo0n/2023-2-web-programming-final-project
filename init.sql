@@ -70,10 +70,10 @@ INSERT INTO review (userId, hospitalId, content)
 VALUES (1, 1, 'review test1');
 
 INSERT INTO review (userId, hospitalId, content) 
-VALUES (1, 1, 'review test2');
+VALUES (1, 2, 'review test2');
 
 INSERT INTO review (userId, hospitalId, content) 
-VALUES (1, 1, 'review test3');
+VALUES (1, 3, 'review test3');
 
 INSERT INTO likeTbl (userId, hospitalId) 
 VALUES (1, 1);

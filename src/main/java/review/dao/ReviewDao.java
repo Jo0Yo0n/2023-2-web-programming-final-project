@@ -22,6 +22,7 @@ public class ReviewDao extends DaoTemplate<Review>{
 			return joinQueryForList(sql, rs -> {
 			    return new ReviewDto(
 				        rs.getLong("userId"),
+				        hospitalId,
 				        rs.getString("nickName"),
 				        rs.getString("content")
 				    );
