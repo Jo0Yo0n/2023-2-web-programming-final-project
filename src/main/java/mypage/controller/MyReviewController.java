@@ -36,6 +36,8 @@ public class MyReviewController extends HttpServlet {
 		Long userId = Long.parseLong(request.getParameter("userId"));
 		List<MyReviewDto> reviews = reviewService.getReviewsByUserId(userId);
 		request.setAttribute("reviews", reviews);
+		
+		System.out.println(reviews.size());
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/myReview.jsp");
 	    dispatcher.forward(request, response);

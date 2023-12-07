@@ -33,7 +33,7 @@ public class ReviewDao extends DaoTemplate<Review>{
 		}
 	}
 	public List<MyReviewDto> getMyReviewsByUserId(Long userId){
-		String sql = "SELECT hospital.hospitalId, hospital.tel, hospital.address, hospital.hosName, hospital.hosPic, review.content, review.reviewId FROM review JOIN hospital ON review.userId = ?";
+		String sql = "SELECT hospital.hospitalId, hospital.tel, hospital.address, hospital.hosName, hospital.hosPic, review.content, review.reviewId FROM review JOIN hospital ON review.userId = ? AND hospital.hospitalId = review.hospitalId";
 		try {
 			return joinQueryForList(sql, rs -> {
 			    return new MyReviewDto(

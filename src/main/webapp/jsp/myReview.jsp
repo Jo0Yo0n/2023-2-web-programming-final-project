@@ -52,14 +52,14 @@
                 %>
                             <div class="hospital-info">
                                 <div class="hospital-pic">
-                                    <a href="<%= request.getContextPath() %>/hospital.jsp?hospitalId=<%= review.getHospitalId() %>">
+                                    <a href="<%= request.getContextPath() %>/hospital?hospitalId=<%= review.getHospitalId() %>">
                                         <img src="<%= request.getContextPath() %>/img/<%= review.getHosPic() %>" />
                                     </a>
                                 </div>
 
                                 <div class="hospital-desc">
                                     <div class="name">
-                                        <a href="<%= request.getContextPath() %>/hospital.jsp?hospitalId=<%= review.getHospitalId() %>">
+                                        <a href="<%= request.getContextPath() %>/hospital?hospitalId=<%= review.getHospitalId() %>">
                                             <%= review.getHosName() %>
                                         </a>
                                     </div>
