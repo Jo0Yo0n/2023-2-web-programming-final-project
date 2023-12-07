@@ -50,7 +50,7 @@
 				<div class="container">
 					<div class="search-container">
 						<form id="search-form" method="get">
-							<input class="search" type="text" name="search" placeholder="검색어 입력" />
+							<input class="search" type="text" name="search" value="<%= request.getParameter("search") %>" placeholder="검색어 입력" />
 							<input class="submit" type="submit" value="검색" onclick="searchByKeyword(document.querySelector('.search').value)"/>
 						</form>
 					</div>
