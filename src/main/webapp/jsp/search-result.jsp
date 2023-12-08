@@ -14,7 +14,7 @@
 				let form = document.getElementById("search-form");
 				form.action = "<%= request.getContextPath() %>/search?keyword=" + keyword;
 			}
-		</script>		
+		</script>
 		<!-- 폰트 -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,8 +49,8 @@
 			<div id="search">
 				<div class="container">
 					<div class="search-container">
-						<form id="search-form" method="get">
-							<input class="search" type="text" name="search" value="<%= request.getParameter("search") %>" placeholder="검색어 입력" />
+						<form action="<%= request.getContextPath() %>/search" id="search-form" method="get">
+							<input class="search" type="text" name="keyword" value="<%= request.getParameter("keyword") %>" placeholder="검색어 입력" />
 							<input class="submit" type="submit" value="검색" onclick="searchByKeyword(document.querySelector('.search').value)"/>
 						</form>
 					</div>
