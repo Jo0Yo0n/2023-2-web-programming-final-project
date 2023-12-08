@@ -42,7 +42,8 @@
 					<div class="container">
 						<div class="contents-container">
 							<div class="user-name">
-								<h1><%= session.getAttribute("userNIckName") %>님</h1>
+
+								<h1><%= session.getAttribute("userNickName") %>님</h1>
 							</div>
 
 							<div class="list">
