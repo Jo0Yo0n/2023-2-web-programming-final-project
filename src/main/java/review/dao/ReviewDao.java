@@ -12,7 +12,7 @@ import review.dto.ReviewDto;
 public class ReviewDao extends DaoTemplate<Review>{
 
 	public Long insertReview(Review review) throws SQLException {
-        String sql = "INSERT INTO review (reviewId, userId, hospitalId, content) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO review (userId, hospitalId, content) VALUES (?, ?, ?)";
         return insert(sql, review, review.getUserId(), review.getHospitalId(), review.getContent());
     }
 	

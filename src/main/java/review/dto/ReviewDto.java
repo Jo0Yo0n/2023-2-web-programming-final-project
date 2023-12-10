@@ -23,6 +23,10 @@ public class ReviewDto {
 		this.content = content;
 	}
 	public ReviewDto(Long userId, Long hospitalId, String userNickName, String content) {
+		if (userId == null || hospitalId == null || userNickName == null || content == null) {
+			throw new IllegalArgumentException("UserId, hospitalId, userNickName, and content cannot be null");
+		}
+
 		this.userId = userId;
 		this.hospitalId = hospitalId;
 		this.userNickName = userNickName;
