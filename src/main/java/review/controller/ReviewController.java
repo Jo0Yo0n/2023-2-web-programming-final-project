@@ -27,10 +27,17 @@ public class ReviewController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ReviewDto newReview = (ReviewDto)request.getAttribute("newReview");
+		Long userId = Long.parseLong(request.getParameter("userId"));
+		Long hospitalId = Long.parseLong(request.getParameter("hospitalId"));
+		String userNickName = request.getParameter("userNickName");
+		String content = request.getParameter("content");
+
+		ReviewDto newReview = new ReviewDto(userId, hospitalId, userNickName, content);
+
 		boolean result = reviewService.createNewReview(newReview);
+
 		String returnPath = request.getContextPath()+"/hospital?hospitalId="+newReview.getHospitalId();
-		if(result == true) {
+		if(result) {
 			returnPath += "&review=true";
 		}else {
 			returnPath += "&review=false";
