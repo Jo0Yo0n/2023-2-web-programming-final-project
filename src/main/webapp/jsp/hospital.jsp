@@ -120,7 +120,7 @@
 						<%-- 로그인된 경우에만 리뷰 작성 폼을 표시 --%>
 						<% if(session.getAttribute("userId") != null) { %>
 						<div id="review-form">
-							<form action="<%= request.getContextPath() %>/review/create" method="post">
+							<form action="<%= request.getContextPath() %>/review/create" method="post" accept-charset="UTF-8">
 								<textarea name="content" rows="4" placeholder="리뷰를 작성해주세요"></textarea>
 								<input type="hidden" name="userId" value="<%= session.getAttribute("userId") %>" />
 								<input type="hidden" name="hospitalId" value="<%= hospital.getHospitalId() %>" />
