@@ -45,12 +45,12 @@ body {
     background-color: deeppink;
 }
 
-/* 리뷰 컨테이너 */
-#reviews {
+/* 좋아요 목록 컨테이너 */
+#likes {
     padding: 50px 0;
 }
 
-.review-container {
+.like-container {
     width: 800px;
     margin: 0 auto;
 }
@@ -84,13 +84,8 @@ body {
     font-size: 18px;
 }
 
-/* 리뷰 내용 */
-.review {
-    color: #333;
-}
-
-/* 리뷰가 없을 때 메시지 */
-.no-review {
+/* 좋아요가 없을 때 메시지 */
+.no-like {
     text-align: center;
     font-size: 16px;
     color: #555;
