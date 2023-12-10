@@ -41,7 +41,6 @@ body {
 }
 
 /* 검색창 */
-/* 검색창 */
 .search-container {
 	position: relative;
 	bottom: 50px;
@@ -64,28 +63,64 @@ body {
 }
 
 /* 컨텐츠 */
+/* 검색 결과 스타일 */
+#contents {
+	padding: 50px 0;
+}
+
 .contents-container {
 	width: 800px;
 	margin: 0 auto;
 }
-.contents-container .hospital-info {
+
+/* 병원 정보 스타일 */
+.hospital-info {
 	overflow: hidden;
 	margin-bottom: 50px;
 }
-.contents-container .hospital-info .hospital-pic {
-	margin-right: 90px;
+
+.hospital-info .hospital-pic {
+	margin-right: 20px;
 	float: left;
 }
-.contents-container .hospital-info .hospital-pic img {
-	height: 200px;
-	width: 250px;
+
+.hospital-info .hospital-pic img {
+	height: 100px;
+	width: 120px;
+	border-radius: 8px;
 }
-.contents-container .hospital-info .hospital-desc {
+
+.hospital-info .hospital-desc {
 	float: left;
 	position: relative;
-	top: 50px;
+	top: 20px;
 }
-.contents-container .hospital-info .hospital-desc .name {
-	margin-bottom: 30px;
+
+.hospital-info .hospital-desc .hospital-name {
+	margin-bottom: 10px;
 	font-weight: bold;
+	font-size: 18px;
+}
+
+.hospital-info .location {
+	margin-bottom: 5px;
+}
+
+.hospital-info .department,
+.hospital-info .price {
+	color: #555;
+}
+
+.hospital-info .department::before,
+.hospital-info .price::before {
+	content: "-";
+	margin: 0 5px;
+}
+
+/* 검색 결과가 없을 때 메시지 스타일 */
+.no-result {
+	text-align: center;
+	font-size: 16px;
+	color: #555;
+	margin-top: 20px;
 }
