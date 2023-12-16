@@ -136,7 +136,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="<%= request.getContextPath() %>/js/hospital.js"></script>
+
 		<script>
 			function likeButtonClick() {
 				const likeButton = document.getElementById("likeButton");
@@ -153,7 +153,7 @@
 				xhr.onreadystatechange = function () {
 					if (xhr.readyState === 4) {
 						if (xhr.status === 200) {
-							likeButton.classList.add("active");
+							likeButton.classList.toggle("active");
 						} else {
 							console.error("Error sending like request");
 						}
