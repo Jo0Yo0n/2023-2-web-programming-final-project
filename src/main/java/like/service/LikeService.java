@@ -17,6 +17,7 @@ public class LikeService {
 	}
 	
 	public void updateLike(Long userId, Long hospitalId){
+		// 좋아요가 토글식으로 됨.
 		List<Like> likes = likeDao.getLikesByUserIdAndHospitalId(userId, hospitalId);
 		if(likes.size() == 0) {
 			likeDao.insertLike(new Like(userId, hospitalId));

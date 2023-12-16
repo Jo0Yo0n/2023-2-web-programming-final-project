@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import department.entity.Department;
 import department.service.DepartmentService;
@@ -43,6 +44,7 @@ public class HospitalController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/hospital.jsp");
+		boolean isLike = false;
 		
 		// hospital data
 		Long hospitalId = Long.parseLong(request.getParameter("hospitalId"));
@@ -62,6 +64,21 @@ public class HospitalController extends HttpServlet {
 		List<Department> departments = departmentService.getDepartmentByHospitalId(hospitalId);
 		request.setAttribute("departments", departments);
 		
+		try {
+			HttpSession session = request.getSession(false);
+			if(session.getAttribute("userId") != null) {
+				Long sessionUserId = (Long) session.getAttribute("userId");
+				for(Like like: likes) {
+					if(like.getUserId().equals(sessionUserId)) {
+						isLike = true;
+						break;
+					}
+				}
+			}
+		} catch (Exception e) {
+			isLike = false;
+		}
+		request.setAttribute("isLike", isLike);
 		
 		//List<Hospital> hospitals = hospitalService.getMainHospital();
 	    dispatcher.forward(request, response);
