@@ -58,7 +58,7 @@
 					<div class="nav-container">
 						<a href="<%= request.getContextPath() %>/search?keyword=건강검진" class="link1">건강검진</a>
 						<a href="<%= request.getContextPath() %>/search?keyword=예방접종" class="link2">예방접종</a>
-						<a href="<%= request.getContextPath() %>/search?keyword=중성화 수술" class="link3">중성화 수술</a>
+						<a href="<%= request.getContextPath() %>/search?keyword=중성화" class="link3">중성화</a>
 						<a href="<%= request.getContextPath() %>/search?keyword=슬개골 탈구" class="link4">슬개골 탈구</a>
 					</div>
 				</div>

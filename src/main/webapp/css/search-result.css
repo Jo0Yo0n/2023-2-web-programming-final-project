@@ -1,6 +1,7 @@
 body {
 	font-family: "Nanum Gothic", sans-serif;
 }
+
 #wrap {
 	background: #f9f9f9;
 	height: 1000px;
@@ -17,11 +18,13 @@ body {
 	width: 200px;
 	height: 200px;
 }
+
 .header-container .menu {
 	text-align: right;
 	position: relative;
 	top: -150px;
 }
+
 .header-container .menu a {
 	color: #fff;
 	padding: 10px 0px 10px 13px;
@@ -30,11 +33,13 @@ body {
 	font-size: 12px;
 	border-radius: 20px;
 }
+
 .header-container .menu a:link,
 .header-container .menu a:visited {
 	background-color: pink;
 	padding: 5px 15px;
 }
+
 .header-container .menu a:hover,
 .header-container .menu a:active {
 	background-color: deeppink;
@@ -47,6 +52,7 @@ body {
 	width: 600px;
 	margin: 0 auto;
 }
+
 .search-container .search {
 	width: 100%;
 	border: 1px solid #bbb;
@@ -54,6 +60,7 @@ body {
 	padding: 18px 12px;
 	font-size: 14px;
 }
+
 .search-container .submit {
 	position: absolute;
 	width: 40px;
@@ -74,6 +81,12 @@ body {
 }
 
 /* 병원 정보 스타일 */
+.search-result{
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 50px;
+}
+
 .hospital-info {
 	overflow: hidden;
 	margin-bottom: 50px;
@@ -96,7 +109,7 @@ body {
 	top: 20px;
 }
 
-.hospital-info .hospital-desc .hospital-name {
+.hospital-info .hospital-name {
 	margin-bottom: 10px;
 	font-weight: bold;
 	font-size: 18px;
@@ -109,6 +122,7 @@ body {
 .hospital-info .department,
 .hospital-info .price {
 	color: #555;
+	margin-top: 5px; /* 글 간격 조절 */
 }
 
 .hospital-info .department::before,
