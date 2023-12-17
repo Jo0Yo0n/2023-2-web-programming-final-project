@@ -81,13 +81,16 @@
 						</div>
 					</div>
 				</div>
-				
+
+				<%-- 좋아요 버튼은 로그인 상태에서만 표시 --%>
 				<div class="middle">
-					<svg class="like" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+					<% if(session.getAttribute("userId") != null) { %>
+					<svg class="like <%=(Boolean)request.getAttribute("isLike") ? "active" : "" %>" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" id="likeButton" onclick="likeButtonClick()">
 						<path
 							d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
 						/>
 					</svg>
+					<% } %>
 				</div>
 
 				<div id="review">
@@ -133,6 +136,32 @@
 				</div>
 			</div>
 		</div>
-		<script src="<%= request.getContextPath() %>/js/hospital.js"></script>
+
+		<script>
+			function likeButtonClick() {
+				const likeButton = document.getElementById("likeButton");
+
+				const hospitalId = '<%= hospital.getHospitalId() %>';
+				const userId = '<%= session.getAttribute("userId") %>';
+
+				const data = "userId=" + userId + "&hospitalId=" + hospitalId;
+
+				const xhr = new XMLHttpRequest();
+				xhr.open("POST", "<%= request.getContextPath() %>/like", true);
+				xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						if (xhr.status === 200) {
+							likeButton.classList.toggle("active");
+						} else {
+							console.error("Error sending like request");
+						}
+					}
+				};
+
+				xhr.send(data);
+			}
+		</script>
 	</body>
 </html>
