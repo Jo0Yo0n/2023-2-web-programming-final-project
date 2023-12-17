@@ -14,7 +14,7 @@
 			<div id="header">
 				<div class="container">
 					<div class="header-container">
-						<a href="<%= request.getContextPath() %>/main">
+						<a href="<%= request.getContextPath() %>/">
 							<img class="logo" src="<%= request.getContextPath() %>/img/logo.png" alt="logo" />
 						</a>
 
