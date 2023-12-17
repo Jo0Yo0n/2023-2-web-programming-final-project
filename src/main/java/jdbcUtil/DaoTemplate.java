@@ -130,7 +130,7 @@ public class DaoTemplate<Obj> {
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i + 1, args[i]);
             }
-
+            System.out.println(ps);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 resultList.add(rowMapper.mapRow(rs));

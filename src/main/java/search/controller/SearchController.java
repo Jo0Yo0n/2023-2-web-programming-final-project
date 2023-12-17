@@ -36,6 +36,7 @@ public class SearchController extends HttpServlet {
 		
 		String keyword = request.getParameter("keyword");
 		List<SearchDto> searchResult = searchService.getResult(keyword);
+		System.out.println(keyword);
 		request.setAttribute("searchResult", searchResult);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/search-result.jsp");
 	    dispatcher.forward(request, response);

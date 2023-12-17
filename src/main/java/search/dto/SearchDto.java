@@ -20,4 +20,10 @@ public class SearchDto {
 		this.departmentName = departmentName;
 		this.price = price;
 	}
+	@Override
+	public String toString() {
+		return "SearchDto [hospital=" + hospital + ", departmentName=" + departmentName + ", price=" + price + "]";
+	}
+	
+	
 }

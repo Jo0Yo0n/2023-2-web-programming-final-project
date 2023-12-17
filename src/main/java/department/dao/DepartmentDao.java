@@ -30,9 +30,8 @@ public class DepartmentDao extends DaoTemplate<Department> {
 	public List<SearchDto> getSearchResultByKeyword(String keyword) {
 		String sql = "SELECT hospital.hospitalId, hospital.tel, hospital.address, hospital.hosName, hosPic, "
 				+ "department.departName, department.price "
-				+ "FROM department JOIN hospital ON department.departName = ?";
-				//+ "FROM department JOIN hospital ON hospital.hospitalId = department.hospitalId"
-				//+ "WHERE departName = ?";
+				+ "FROM department INNER JOIN hospital ON department.hospitalId = hospital.hospitalId " 
+				+ "WHERE department.departName = ?";
 		try {
 			return joinQueryForList(sql, rs -> {
 			    return new SearchDto(
@@ -46,7 +45,7 @@ public class DepartmentDao extends DaoTemplate<Department> {
 				        rs.getString("departName"),
 				        rs.getInt("price")
 				    );
-			}, "%"+keyword+"%");
+			}, keyword);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<SearchDto>();
