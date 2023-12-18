@@ -35,6 +35,9 @@ public class DaoTemplate<Obj> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        if(this.connection == null) {
+        	throw new RuntimeException();
+        }
     }
     /**
      * 객체의 id를 자동으로 생성해주고 sql을 실행하여 insert를 수행

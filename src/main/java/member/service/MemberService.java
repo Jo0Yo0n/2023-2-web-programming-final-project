@@ -31,7 +31,6 @@ public class MemberService {
 		} else {
 			return Optional.empty();
 		}
-		
 	}
 	public boolean signUp(SignUpDto signUpDto) {
 		try {

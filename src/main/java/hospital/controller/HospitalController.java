@@ -50,20 +50,15 @@ public class HospitalController extends HttpServlet {
 		Long hospitalId = Long.parseLong(request.getParameter("hospitalId"));
 		Hospital hospital = hospitalService.getHospitalById(hospitalId);
 		request.setAttribute("hospital", hospital);
-		
 		// review
 		List<ReviewDto> reviewDtos = reviewService.getReviewByHospitalId(hospitalId);
 		request.setAttribute("reviews", reviewDtos);
-		
 		// likes
 		List<Like> likes = likeService.getLikesByHospitalId(hospitalId);
-		
 		request.setAttribute("likes", likes);
-
 		// department
 		List<Department> departments = departmentService.getDepartmentByHospitalId(hospitalId);
 		request.setAttribute("departments", departments);
-		
 		try {
 			HttpSession session = request.getSession(false);
 			if(session.getAttribute("userId") != null) {

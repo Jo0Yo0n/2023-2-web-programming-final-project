@@ -16,7 +16,7 @@ import hospital.service.HospitalService;
 /**
  * Servlet implementation class MainController
  */
-@WebServlet("/main")
+@WebServlet("/")
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final HospitalService hospitalService = new HospitalService();
